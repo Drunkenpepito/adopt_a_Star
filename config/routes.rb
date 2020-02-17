@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'stars/index'
+  get 'stars/show'
+  get 'stars/new'
+  get 'stars/create'
+  get 'stars/edit'
+  get 'stars/update'
+  get 'stars/destroy'
   devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
