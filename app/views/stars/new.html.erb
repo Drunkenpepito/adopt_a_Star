@@ -1,2 +1,15 @@
-<h1>Stars#new</h1>
-<p>Find me in app/views/stars/new.html.erb</p>
+<div class= "container">
+  <h1>Create your star</h1>
+  <div class="form">
+    <%= simple_form_for(@star) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :city %>
+      <%= f.input :category %>
+      <%= f.input :price %>
+      <%= f.input :sex %>
+      <%= f.input :size %>
+      <%= f.input :photo, as: :file %>
+      <%= f.button :submit, class: "btn btn-gradient"%>
+    <% end %>
+  </div>
+</div>
