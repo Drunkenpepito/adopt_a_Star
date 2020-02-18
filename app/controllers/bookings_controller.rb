@@ -11,7 +11,9 @@ class BookingsController < ApplicationController
   end
 
   def new
+    @star = Star.find(params[:star_id])
     @booking = Booking.new
+
   end
 
   def create
