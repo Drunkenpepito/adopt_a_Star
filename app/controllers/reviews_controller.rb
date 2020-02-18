@@ -1,9 +1,10 @@
 class ReviewsController < ApplicationController
 
-  before_action :set_review
+  before_action :set_review , only: [:show]
 
   def new
     @booking = Booking.find(params[:booking_id])
+    @star = @booking.star
     @review = Review.new
   end
 
@@ -11,8 +12,8 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @booking = Booking.find(params[:booking_id])
     @review.booking = @booking
-    if @review.save
-      redirect_to booking_path(@booking)
+    if @review.save!
+      redirect_to star_booking_path(@booking.star, @booking)
     else
       render :new
     end

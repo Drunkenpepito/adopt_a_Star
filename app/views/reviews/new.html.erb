@@ -1,15 +1,13 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @star.photo.key %>');">
-
   <h1> <%= @star.name %> </h1>
-
   <div class="container padded">
     <div class="row">
       <div class="col-xs-10 col-xs-offset-1">
 
-        <%= simple_form_for [@star, @booking] do |f| %>
+        <%= simple_form_for([@booking, @review]) do |f| %>
           <%= f.error_notification %>
-          <%= f.input :from %>
-          <%= f.input :to %>
+          <%= f.input :note %>
+          <%= f.input :description %>
           <%= f.button :submit, class: "btn btn-primary" %>
         <% end %>
 
@@ -17,4 +15,3 @@
     </div>
   </div>
 </div>
-
