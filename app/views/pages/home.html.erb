@@ -3,11 +3,19 @@
 
 <p>une appli de OUf</p>
 
-<p>decouvrez les stars du moment et passez une nuit toride avec elles</p>
-
-
 <h1>Adopt a Star</h1>
 <%= simple_form_for :filter, url: stars_path, method: :get do |f| %>
 <%= f.input :city %>
 <%= f.submit %>
 <% end %>
+
+<div class= "container col-5">
+  <h1>Welcome to Adopt a Star</h1>
+  <div class="form">
+    <%= simple_form_for :search, url: stars_path, method: :get do |f| %>
+      <%= f.input :city %>
+      <%= f.input :category %>
+      <%= f.button :submit, class: "btn btn-gradient"%>
+    <% end %>
+  </div>
+</div>
