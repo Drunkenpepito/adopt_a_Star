@@ -1,0 +1,10 @@
+<div class="container padded">
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1">
+      <%= simple_form_for(@booking) do |f| %>
+        <%= f.error_notification %>
+        <%= f.input :name %>
+        <%= f.input :photos, as: :file %>
+        <%= f.button :submit, class: "btn btn-primary" %>
+      <% end %>
+    </div>
