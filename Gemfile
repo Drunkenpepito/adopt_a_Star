@@ -14,6 +14,8 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+
+gem 'cloudinary', '~> 1.12.0'
 # gem 'pundit'
 
 group :development do
