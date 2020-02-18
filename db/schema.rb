@@ -40,10 +40,12 @@ ActiveRecord::Schema.define(version: 2020_02_18_110446) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.date "time"
-    t.integer "user_id"
-    t.integer "star_id"
+    t.bigint "user_id"
+    t.bigint "star_id"
     t.date "from"
     t.date "to"
+    t.index ["star_id"], name: "index_bookings_on_star_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -81,6 +83,8 @@ ActiveRecord::Schema.define(version: 2020_02_18_110446) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "bookings", "stars"
+  add_foreign_key "bookings", "users"
   add_foreign_key "reviews", "bookings"
   add_foreign_key "stars", "users"
 end
