@@ -4,5 +4,6 @@
   </div>
   <%= link_to "", star_path, method: :delete, data: {:confirm => 'Are you sure?'}, :class => "far fa-trash-alt" %>
   <%= link_to "Edit", edit_star_path %>
+   <h1><button class="btn btn-ghost"> <%= link_to 'Book your Star', new_star_booking_path(@star) %> </button></h1>
   <h3>Reviews</h3>
 </div>
