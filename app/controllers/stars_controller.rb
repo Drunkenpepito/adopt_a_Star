@@ -35,11 +35,13 @@ class StarsController < ApplicationController
   end
 
   def update
+    @star = Star.find(params[:id])
     @star.update(star_params)
     redirect_to star_path(@star)
   end
 
   def destroy
+    @star = Star.find(params[:id])
     @star.destroy
     redirect_to stars_path
   end
@@ -51,6 +53,6 @@ class StarsController < ApplicationController
   end
 
   def star_params
-    params.require(:star).permit(:name, :city, :category, :price, :sex, :size)
+    params.require(:star).permit(:name, :city, :category, :price, :sex, :size, :photo)
   end
 end
