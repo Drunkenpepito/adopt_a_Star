@@ -4,29 +4,29 @@ class StarsController < ApplicationController
   def index
     @stars = Star.all
 
-    if params[:search] && !params[:search][:name].empty?
+    if params[:search] && params[:search][:name] && !params[:search][:name].empty?
       @stars = @stars.where(name: params[:search][:name])
     end
 
-    # if params[:search] && !params[:search][:city].empty?
-    #   @stars = @stars.where(city: params[:search][:city])
-    # end
+    if params[:search] && params[:search][:city]  && !params[:search][:city].empty?
+      @stars = @stars.where(city: params[:search][:city])
+    end
 
-    # if params[:search] && !params[:search][:category].empty?
-    #   @stars = @stars.where(category: params[:search][:category])
-    # end
+    if params[:search] && params[:search][:category] && !params[:search][:category].empty?
+      @stars = @stars.where(category: params[:search][:category])
+    end
 
-    # if params[:search] && !params[:search][:price].empty?
-    #   @stars = @stars.where(price: params[:search][:price])
-    # end
+    if params[:search] && params[:search][:price] && !params[:search][:price].empty?
+      @stars = @stars.where(price: params[:search][:price])
+    end
 
-    # if params[:search] && !params[:search][:sex].empty?
-    #   @stars = @stars.where(sex: params[:search][:sex])
-    # end
+    if params[:search] && params[:search][:sex] && !params[:search][:sex].empty?
+      @stars = @stars.where(sex: params[:search][:sex])
+    end
 
-    # if params[:search] && !params[:search][:size].empty?
-    #   @stars = @stars.where(size: params[:search][:size])
-    # end
+    if params[:search] && params[:search][:size] && !params[:search][:size].empty?
+      @stars = @stars.where(size: params[:search][:size])
+    end
   end
 
   def show
