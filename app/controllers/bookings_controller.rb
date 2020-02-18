@@ -4,6 +4,7 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = Booking.all
+    # authorize @bookings
   end
 
   def show
