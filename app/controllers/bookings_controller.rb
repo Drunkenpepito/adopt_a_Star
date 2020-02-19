@@ -3,7 +3,7 @@ class BookingsController < ApplicationController
   before_action :find_booking, only: [:show]
 
   def index
-    @bookings = Booking.all
+    @bookings = policy_scope(Booking)
     authorize @bookings
     # authorize @bookings
   end
