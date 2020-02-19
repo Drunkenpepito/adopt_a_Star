@@ -12,7 +12,7 @@ class StarsController < ApplicationController
       }
     end
     # @stars = Star.all
-    # @stars = policy_scope(Star)
+    @stars = policy_scope(Star)
 
     if params[:search] && params[:search][:name] && !params[:search][:name].empty?
       @stars = @stars.where(name: params[:search][:name])
@@ -40,17 +40,17 @@ class StarsController < ApplicationController
     if params[:search] && params[:search][:size] && !params[:search][:size].empty?
       @stars = @stars.where(size: params[:search][:size])
     end
-    # authorize @stars
+    authorize @stars
   end
 
   def show
     @star = Star.find(params[:id])
-    # authorize @star
+    authorize @star
   end
 
   def new
     @star = Star.new
-    # authorize @star
+    authorize @star
   end
 
   def create
