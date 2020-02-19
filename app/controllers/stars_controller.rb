@@ -2,6 +2,7 @@ class StarsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show, :index]
 
   def index
+<<<<<<< HEAD
     @stars = Star.geocoded
 
 
@@ -11,6 +12,10 @@ class StarsController < ApplicationController
         lng: star.longitude
       }
     end
+=======
+    # @stars = Star.all
+    @stars = policy_scope(Star)
+>>>>>>> master
 
     if params[:search] && params[:search][:name] && !params[:search][:name].empty?
       @stars = @stars.where(name: params[:search][:name])
@@ -32,17 +37,26 @@ class StarsController < ApplicationController
     #   @stars = @stars.where(sex: params[:search][:sex])
     # end
 
+<<<<<<< HEAD
     # if params[:search] && params[:search][:size] && !params[:search][:size].empty?
     #   @stars = @stars.where(size: params[:search][:size])
     # end
+=======
+    if params[:search] && params[:search][:size] && !params[:search][:size].empty?
+      @stars = @stars.where(size: params[:search][:size])
+    end
+    authorize @stars
+>>>>>>> master
   end
 
   def show
     @star = Star.find(params[:id])
+    authorize @star
   end
 
   def new
     @star = Star.new
+    authorize @star
   end
 
   def create
