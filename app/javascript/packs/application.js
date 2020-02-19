@@ -8,5 +8,8 @@ import "bootstrap";
 import { initMapbox } from '../plugins/init_mapbox';
 
 document.addEventListener('turbolinks:load', () => {
-  initMapbox();
+  const map = document.getElementById('map')
+  if (map) {
+    initMapbox();
+  }
 })

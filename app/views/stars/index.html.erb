@@ -14,7 +14,7 @@
         <div class="card-product">
           <img src="<%= cl_image_path star.photo.key, height: 300, width: 400, crop: :fill %>" />
           <div class="card-product-infos">
-            <h2><%= link_to star.name, star_path(star)%></h2>
+            <h2><%= link_to star.name, star_path(star), data: { turbolinks: false } %></h2>
             <p><%= star.category %></p>
           </div>
         </div>
