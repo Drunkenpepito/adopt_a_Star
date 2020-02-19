@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to stars_path, class: "navbar-brand" do %>
-    <%= image_tag "https://banner2.cleanpng.com/20180409/dge/kisspng-cocktail-margarita-computer-icons-beer-martini-snack-5acbc9c53d6788.3928828315233049012515.jpg" %>
+  <%= image_tag "logo.png", alt: "logo", width: 64, height: 64 %>
   <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,27 +16,27 @@
     </div>
   <% end %>
 
+
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li>
-        <%= link_to new_star_path, class: 'btn-nav' do %>
-          <svg width="277" height="62">
-            <defs>
-                <linearGradient id="grad1">
-                    <stop offset="0%" stop-color="#FF8282"/>
-                    <stop offset="100%" stop-color="#E178ED" />
-                </linearGradient>
-            </defs>
-             <rect x="5" y="5" rx="25" fill="none" stroke="url(#grad1)" width="266" height="50"></rect>
-          </svg>
-          <span>Create a star</span>
-        <% end %>
-      </li>
-    </ul>
+    <div class="navbar-nav mr-auto">
+      <% if user_signed_in? %>
+        <li class="nav-item dropdown">
+          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar-large dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+          </div>
+        </li>
+      <% else %>
+        <div id="connection">
+          <div>
+            <%= link_to "Connection", new_user_session_url %>
+          </div>
+          <div>
+            <%= link_to "Sign Up", new_user_registration_path %>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
-
-
-
-
 
