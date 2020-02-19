@@ -5,6 +5,8 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  // flex-grow: 1;
+  // flex-direction: row;
   margin-bottom: 20px;
   margin-right: 10px;
   margin-left: 10px;
@@ -39,7 +41,6 @@
   flex-direction: column;
   flex-grow: 1;
 }
-
 
 .card-trip {
   overflow: hidden;

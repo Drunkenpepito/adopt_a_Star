@@ -12,5 +12,3 @@ private
   end
 
 end
-
-
