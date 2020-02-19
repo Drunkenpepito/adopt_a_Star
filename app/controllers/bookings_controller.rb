@@ -4,20 +4,24 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = Booking.all
+    authorize @bookings
     # authorize @bookings
   end
 
   def show
     @booking = Booking.find(params[:id])
+    authorize @booking
   end
 
   def new
     @star = Star.find(params[:star_id])
     @booking = Booking.new
+    authorize @booking
   end
 
   def create
     @booking = Booking.new(booking_params)
+    authorize @booking
     @booking.star = Star.find(params[:star_id])
     @booking.user = current_user
     @booking.time =  (@booking.to - @booking.from).to_i
