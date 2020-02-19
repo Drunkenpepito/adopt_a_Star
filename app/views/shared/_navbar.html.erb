@@ -22,8 +22,6 @@
       <% if user_signed_in? %>
         <li class="nav-item dropdown">
           <% if current_user.photo.attached? %>
-          <!-- <img/> => <%= image_tag %> -->
-          <!-- <div style="background-image: url(<%= image_path %>)>...</div> -->
             <%= cl_image_tag current_user.photo.key, class: "avatar-large dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% else %>
             <%= image_tag "avatar_default.png", alt: "Mon image", width: 64, height: 64, id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false  %>
