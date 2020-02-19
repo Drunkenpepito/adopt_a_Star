@@ -55,6 +55,7 @@ class StarsController < ApplicationController
 
   def create
     @star = Star.new(star_params)
+     authorize @star
     if @star.save
       redirect_to star_path(@star)
     else
