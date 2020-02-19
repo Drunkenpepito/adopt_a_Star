@@ -13,8 +13,7 @@ class StarPolicy < ApplicationPolicy
 
 #seulement Xavier et Pierre peuvent creer
   def create?
-   true if user.email =='pfuric@hotmail.com'
-   true if user.email =='blanchyx@gmail.com'
+   true if user.email == 'pfuric@hotmail.com'
   end
 #seulement Xavier et Pierre peuvent creer
   def new?

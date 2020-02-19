@@ -5,4 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :bookings
+
+  def is_admin?
+    self.permission == 'admin'
+  end
 end
