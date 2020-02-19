@@ -7,4 +7,23 @@
    <h1><button class="btn btn-ghost"> <%= link_to 'Book your Star', new_star_booking_path(@star) %> </button></h1>
   <h3>Reviews</h3>
 
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li>
+        <%= link_to new_star_path, class: 'btn-nav' do %>
+          <svg width="277" height="62">
+            <defs>
+                <linearGradient id="grad1">
+                    <stop offset="0%" stop-color="#FF8282"/>
+                    <stop offset="100%" stop-color="#E178ED" />
+                </linearGradient>
+            </defs>
+             <rect x="5" y="5" rx="25" fill="none" stroke="url(#grad1)" width="266" height="50"></rect>
+          </svg>
+          <span>Create a cocktail</span>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+
 </div>
