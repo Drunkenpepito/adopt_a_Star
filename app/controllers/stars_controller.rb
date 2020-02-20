@@ -2,9 +2,11 @@ class StarsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show, :index]
 
   def index
-    @stars = Star.geocoded
-    # @stars = Star.all
-    @stars = policy_scope(Star)
+    @stars = policy_scope(Star).geocoded
+
+    if params[:query].present?
+      @stars = Star.search_by_name_and_more(params[:query])
+    end
 
     @markers = @stars.map do |star|
       {
