@@ -18,3 +18,21 @@
   }
 }
 
+.edit-star{
+  position: relative;
+  top: 67px;
+  right: -440px;
+}
+
+
+.box{
+  background: white;
+  padding: 30px;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+}
+
+.container-star{
+  display: flex;
+  flex-direction: row;
+}
