@@ -9,7 +9,7 @@
       <%= f.input :price %>
       <%= f.input :sex %>
       <%= f.input :size %>
-      <%= f.input :photos, as: :file %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
       <%= f.button :submit, class: "btn btn-gradient"%>
     <% end %>
   </div>
@@ -18,5 +18,4 @@
   <a data-dismiss="alert" aria-label="Close">
     <i class="fas fa-times"></i>
   </a>
-</div>
 </div>

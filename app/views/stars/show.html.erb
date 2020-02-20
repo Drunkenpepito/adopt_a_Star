@@ -7,8 +7,8 @@
       <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
     </ol>
     <div class="carousel-inner">
-      <% @star.photos.each do |photo| %>
-        <div class="carousel-item active">
+      <% @star.photos.each_with_index do |photo, i| %>
+        <div class="carousel-item <%= 'active' if i == 0 %>">
           <img class="d-block w-100" src="<%= cl_image_path photo.key, height: 300, width: 400, crop: :fill %>" alt="First slide">
         </div>
       <% end %>
