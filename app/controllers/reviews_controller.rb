@@ -5,9 +5,11 @@ class ReviewsController < ApplicationController
 
   # renvoie toutes les revues sur une même star
   def index
+    @booking = Booking.find(params[:booking_id])
+    @star = @booking.star
+    @reviews = policy_scope(Review)
+    authorize @reviews
   end
-
-
 
   def new
     @booking = Booking.find(params[:booking_id])
@@ -17,7 +19,9 @@ class ReviewsController < ApplicationController
   end
 
   def create
+
     @review = Review.new(review_params)
+    @review.user = current_user
     @booking = Booking.find(params[:booking_id])
     @review.booking = @booking
     authorize @review
