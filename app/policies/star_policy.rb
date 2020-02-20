@@ -13,7 +13,7 @@ class StarPolicy < ApplicationPolicy
 
 #seulement Xavier et Pierre peuvent creer
   def create?
-   true if user.email == 'pfuric@hotmail.com'
+   true
   end
 #seulement Xavier et Pierre peuvent creer
   def new?
@@ -26,7 +26,7 @@ class StarPolicy < ApplicationPolicy
   end
 #tout le monde peut update
   def update?
-    true
+    record.user == user
   end
 # tout le monde peut edit
   def edit?
@@ -34,7 +34,11 @@ class StarPolicy < ApplicationPolicy
   end
 # personne ne peut destroy
   def destroy?
+
+    record.user == user
+
     true
+
   end
 
 end
