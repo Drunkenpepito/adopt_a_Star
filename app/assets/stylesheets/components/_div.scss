@@ -18,21 +18,51 @@
   }
 }
 
-.edit-star{
-  position: relative;
-  top: 67px;
-  right: -440px;
-}
-
-
-.box{
-  background: white;
-  padding: 30px;
-  border-radius: 4px;
-  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+.banner-edit-or-delete{
+    // background: #00c123;
+    padding: 2px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    a {
+    color: #dadada;
+    text-decoration: none;
+    background-color: transparent;
+    }
+    a:hover{
+      color: #989898;
+    }
 }
 
 .container-star{
   display: flex;
   flex-direction: row;
 }
+
+.box{
+  background: white;
+  margin: 17px;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 900px;
+  padding-top: 20px;
+  font-size: 20px;
+  h2{
+    text-align: center;
+    padding-bottom: 20px;
+  }
+  ul {
+    list-style-type: none;
+  }
+}
+
+.box-booking{
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 339px;
+  height: 300px;
+  padding: 20px;
+}
+
