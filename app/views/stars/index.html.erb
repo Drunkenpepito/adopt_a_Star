@@ -12,7 +12,7 @@
   <div id = 'flex-index'>
     <% @stars.each do |star| %>
         <div class="card-product">
-          <img src="<%= cl_image_path star.photos.first.key, height: 300, width: 400, crop: :fill %>" />
+          <img src="<%= cl_image_path star.photos.first.key, height: 300, width: 400, :crop => :thumb, :gravity => :face %>" />
           <div class="card-product-infos">
             <h2><%= link_to star.name, star_path(star), data: { turbolinks: false } %></h2>
             <p><%= star.category %></p>
@@ -26,10 +26,10 @@
     height: 100vh;"
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-
   </div>
-
 </div>
+
+
 
 
 

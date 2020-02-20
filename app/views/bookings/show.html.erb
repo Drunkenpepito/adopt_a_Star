@@ -1,11 +1,11 @@
 <div class="container align-bottom" >
 
   <div class="card-trip">
-   <img src="<%= cl_image_path @booking.star.photo.key %>">
+   <img src="<%= cl_image_path @booking.star.photos.first.key %>">
     <div class="card-trip-infos">
       <div>
         <h3><%= @booking.from %> </h3>
-        <h2><%=current_user.first_name %> a passé <%= @booking.time %> jours avec <%= @booking.star.name %></h2>
+        <h2><%= current_user.first_name %> a passé <%= @booking.time %> jours avec <%= @booking.star.name %></h2>
       </div>
 
       <div>

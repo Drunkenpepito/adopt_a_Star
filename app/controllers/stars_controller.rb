@@ -48,6 +48,7 @@ class StarsController < ApplicationController
     @star = Star.find(params[:id])
     @booking = Booking.new
     @booking.star = @star
+    @reviews = policy_scope(Review)
     authorize @star
   end
 
@@ -94,6 +95,6 @@ class StarsController < ApplicationController
   end
 
   def star_params
-    params.require(:star).permit(:name, :city, :category, :price, :sex, :size, photos: [])
+    params.require(:star).permit(:name, :city, :category, :price, :gender, :size, photos: [])
   end
 end
