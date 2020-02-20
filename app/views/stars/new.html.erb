@@ -7,7 +7,7 @@
       <%= f.input :city %>
       <%= f.input :category %>
       <%= f.input :price, as: :range %>
-      <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+<!--       <input type="range" min="1" max="100" value="50" class="slider" id="myRange"> -->
       <%= f.input :gender, collection: ["Male", "Female", "Other"]%>
       <%= f.input :size, label: "Size (cm)", collection: 120..220%>
       <%= f.input :photos, as: :file, input_html: { multiple: true } %>
