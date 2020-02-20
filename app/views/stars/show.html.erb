@@ -2,9 +2,9 @@
   <h1><%= @star.name %></h1>
   <div id="carouselExampleIndicators" class="carousel slide w-50 p-3" data-ride="carousel">
     <ol class="carousel-indicators">
-      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      <% @star.photos.each_with_index do |photo, i| %>
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="<%= 'active' if i == 0 %>"></li>
+      <% end %>
     </ol>
     <div class="carousel-inner">
       <% @star.photos.each_with_index do |photo, i| %>
@@ -24,12 +24,6 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-
-
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%#= cl_image_path @star.photo.key, height: 300, width: 400, crop: :fill %>')">
-    <%= @star.name %>
-  </div>
-
 
   <div class="edit-star">
     <%= link_to "", star_path, method: :delete, data: {:confirm => 'Are you sure?'}, :class => "far fa-trash-alt" %>
