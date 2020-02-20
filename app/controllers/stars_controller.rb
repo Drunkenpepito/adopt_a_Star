@@ -67,16 +67,19 @@ class StarsController < ApplicationController
 
   def edit
     @star = Star.find(params[:id])
+    authorize @star
   end
 
   def update
     @star = Star.find(params[:id])
+    authorize @star
     @star.update(star_params)
     redirect_to star_path(@star)
   end
 
   def destroy
     @star = Star.find(params[:id])
+    authorize @star
     @star.destroy
     redirect_to stars_path
   end
