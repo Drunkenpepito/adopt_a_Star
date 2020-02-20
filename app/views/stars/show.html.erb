@@ -59,7 +59,6 @@
               <%= f.input :from %>
               <%= f.input :to %>
 
-
               <div class="btn-nav">
                 <input type="submit" name="commit" value="Book this star" class="btn-nav" data-disable-with="Book this star" style="border: none !important; color: hotpink; z-index: 5;">
                   <svg width="277" height="62">
@@ -79,6 +78,22 @@
       </div>
     </div>
 
+<div class ="box-booking">
+
+    <% @reviews.each do |review| %>
+  <div class="notification">
+    <img src="<%= cl_image_path review.user.photo.key%>" class="avatar-large" />
+    <div class="notification-content">
+      <p><strong><%= review.note %> </strong> </p>
+      <p><small><%= review.description %> </small></p>
+    </div>
+    <div class="notification-actions">
+      <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
+      <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+    </div>
+  </div>
+<% end %>
+</div>
 
 
 
