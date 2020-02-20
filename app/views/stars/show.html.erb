@@ -1,12 +1,13 @@
 <div class = "container mt-4">
+
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @star.photo.key, height: 300, width: 400, crop: :fill %>')">
     <%= @star.name %>
-    <div class="edit-star">
-      <%= link_to "", star_path, method: :delete, data: {:confirm => 'Are you sure?'}, :class => "far fa-trash-alt" %>
-      <%= link_to "Edit", edit_star_path %>
-    </div>
   </div>
 
+  <div class="edit-star">
+    <%= link_to "", star_path, method: :delete, data: {:confirm => 'Are you sure?'}, :class => "far fa-trash-alt" %>
+    <%= link_to "Edit", edit_star_path %>
+  </div>
 
 
   <div class = "container-star mt-4">
@@ -27,9 +28,8 @@
               <%= f.error_notification %>
               <%= f.input :from %>
               <%= f.input :to %>
-
               <div class="btn-nav">
-                <input type="submit" name="commit" value="Book this star" class="btn-nav" data-disable-with="Create Booking" style="border: none !important; color: hotpink;">
+                <input type="submit" name="commit" value="Book this star" class="btn-nav" data-disable-with="Book this star" style="border: none !important; color: hotpink; z-index: 5;">
                   <svg width="277" height="62">
                     <defs>
                         <linearGradient id="grad1">
