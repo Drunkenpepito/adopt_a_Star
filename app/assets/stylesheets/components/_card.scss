@@ -12,6 +12,19 @@
   margin-left: 10px;
 }
 
+.card-product-index {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  // flex-grow: 1;
+  // flex-direction: row;
+  margin-bottom: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
 .card-product img {
   height: 100%;
   width: 120px;
