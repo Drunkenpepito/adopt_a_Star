@@ -34,7 +34,11 @@ class StarPolicy < ApplicationPolicy
   end
 # personne ne peut destroy
   def destroy?
+
     record.user == user
+
+    true
+
   end
 
 end
