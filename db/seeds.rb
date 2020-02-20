@@ -19,17 +19,17 @@ xavier = User.create!(email: "xavier@pareasy.com", password: "password", first_n
 
 puts 'Creating friends...'
 
-catherine = Star.new(user: edouard, name: "Catherine Zeta Jones", sex: "female", city: "Los Angeles", price: 63000, category: "actress", size: 167)
-penelope = Star.new(user: xavier, name: "Penelope Cruz", sex: "female", city: "Barcelone", price: 210000, category: "actress", size: 169)
-brad = Star.new(user: benjamin, name: "Brad Pitt", sex: "male", city: "New York", price: 300000, category: "actor", size: 180)
-emily = Star.new(user: xavier, name: "Emily Ratajkowski", sex: "female", city: "Houston", price: 5789076, category: "model", size: 178)
-halle = Star.new(user: pierre, name: "Halle Berry", sex: "female", city: "Havre", price: 56794, category: "model", size: 173)
-tom = Star.new(user: pierre, name: "Tom Cruise", sex: "male", city: "Hollywood", price: 56794, category: "actor", size: 175)
-kylian = Star.new(user: edouard, name: "Kylian Mbappe", sex: "male", city: "Paris", price: 789535, category: "footballer", size: 175)
-jackie = Star.new(user: edouard, name: "Jackie Chan", sex: "male", city: "Hong Kong", price: 787654, category: "actor", size: 170)
-jean = Star.new(user: benjamin, name: "Jean Dujardin", sex: "male", city: "Paris", price: 855654, category: "actor", size: 182)
-marion = Star.new(user: edouard, name: "Marion Cotillard", sex: "female", city: "Paris", price: 5789076, category: "Actress", size: 170)
-alain = Star.new(user: xavier, name: "Alain Delon", sex: "male", city: "Paris", price: 853467, category: "actor", size: 185)
+catherine = Star.new(user: edouard, name: "Catherine Zeta Jones", gender: "female", city: "Los Angeles", price: 63000, category: "actress", size: 167)
+penelope = Star.new(user: xavier, name: "Penelope Cruz", gender: "female", city: "Barcelone", price: 210000, category: "actress", size: 169)
+brad = Star.new(user: benjamin, name: "Brad Pitt", gender: "male", city: "New York", price: 300000, category: "actor", size: 180)
+emily = Star.new(user: xavier, name: "Emily Ratajkowski", gender: "female", city: "Houston", price: 5789076, category: "model", size: 178)
+halle = Star.new(user: pierre, name: "Halle Berry", gender: "female", city: "Havre", price: 56794, category: "model", size: 173)
+tom = Star.new(user: pierre, name: "Tom Cruise", gender: "male", city: "Hollywood", price: 56794, category: "actor", size: 175)
+kylian = Star.new(user: edouard, name: "Kylian Mbappe", gender: "male", city: "Paris", price: 789535, category: "footballer", size: 175)
+jackie = Star.new(user: edouard, name: "Jackie Chan", gender: "male", city: "Hong Kong", price: 787654, category: "actor", size: 170)
+jean = Star.new(user: benjamin, name: "Jean Dujardin", gender: "male", city: "Paris", price: 855654, category: "actor", size: 182)
+marion = Star.new(user: edouard, name: "Marion Cotillard", gender: "female", city: "Paris", price: 5789076, category: "Actress", size: 170)
+alain = Star.new(user: xavier, name: "Alain Delon", gender: "male", city: "Paris", price: 853467, category: "actor", size: 185)
 
 
 
