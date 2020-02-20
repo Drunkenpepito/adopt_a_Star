@@ -8,7 +8,7 @@ class Star < ApplicationRecord
 private
 
   def attached_file?
-    errors.add(:base, 'please insert a file.') unless photo.attached?
+    errors.add(:base, 'please insert a file.') unless photos.attached?
   end
 
 end
