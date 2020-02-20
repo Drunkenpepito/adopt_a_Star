@@ -5,6 +5,13 @@ class Star < ApplicationRecord
   validate :attached_file?
   after_validation :geocode,  if: :will_save_change_to_city?
 
+  include PgSearch::Model
+  pg_search_scope :search_by_name_and_more,
+    against: [ :name, :city, :category, :price, :sex, :size ],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
+
 private
 
   def attached_file?

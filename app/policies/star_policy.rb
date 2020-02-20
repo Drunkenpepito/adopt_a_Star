@@ -34,7 +34,7 @@ class StarPolicy < ApplicationPolicy
   end
 # personne ne peut destroy
   def destroy?
-    false
+    true
   end
 
 end

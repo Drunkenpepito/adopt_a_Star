@@ -6,16 +6,16 @@ class StarsController < ApplicationController
     # @stars = Star.all
     @stars = policy_scope(Star)
 
-    if params[:search] && params[:search][:name] && !params[:search][:name].empty?
-      @stars = @stars.where(name: params[:search][:name])
-    end
-
     @markers = @stars.map do |star|
       {
         lat: star.latitude,
         lng: star.longitude
       }
     end
+
+    # if params[:search] && params[:search][:name] && !params[:search][:name].empty?
+    #   @stars = @stars.where(name: params[:search][:name])
+    # end
 
     # if params[:search] && params[:search][:city]  && !params[:search][:city].empty?
     #   @stars = @stars.where(city: params[:search][:city])
