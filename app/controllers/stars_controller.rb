@@ -68,6 +68,7 @@ class StarsController < ApplicationController
   end
 
   def edit
+
     @star = Star.find(params[:id])
     authorize @star
   end
