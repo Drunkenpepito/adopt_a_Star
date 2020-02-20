@@ -19,7 +19,9 @@ class ReviewsController < ApplicationController
   end
 
   def create
+
     @review = Review.new(review_params)
+    @review.user = current_user
     @booking = Booking.find(params[:booking_id])
     @review.booking = @booking
     authorize @review
