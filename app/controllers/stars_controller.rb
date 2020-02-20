@@ -3,19 +3,18 @@ class StarsController < ApplicationController
 
   def index
     @stars = Star.geocoded
+    # @stars = Star.all
+    @stars = policy_scope(Star)
 
+    if params[:search] && params[:search][:name] && !params[:search][:name].empty?
+      @stars = @stars.where(name: params[:search][:name])
+    end
 
     @markers = @stars.map do |star|
       {
         lat: star.latitude,
         lng: star.longitude
       }
-    end
-    # @stars = Star.all
-    @stars = policy_scope(Star)
-
-    if params[:search] && params[:search][:name] && !params[:search][:name].empty?
-      @stars = @stars.where(name: params[:search][:name])
     end
 
     # if params[:search] && params[:search][:city]  && !params[:search][:city].empty?
@@ -37,9 +36,9 @@ class StarsController < ApplicationController
     # if params[:search] && params[:search][:size] && !params[:search][:size].empty?
     #   @stars = @stars.where(size: params[:search][:size])
     # end
-    if params[:search] && params[:search][:size] && !params[:search][:size].empty?
-      @stars = @stars.where(size: params[:search][:size])
-    end
+    # if params[:search] && params[:search][:size] && !params[:search][:size].empty?
+    #   @stars = @stars.where(size: params[:search][:size])
+    # end
     authorize @stars
   end
 
