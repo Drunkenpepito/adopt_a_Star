@@ -7,4 +7,23 @@
    <h1><button class="btn btn-ghost"> <%= link_to 'Book your Star', new_star_booking_path(@star) %> </button></h1>
   <h3>Reviews</h3>
 
+
+
+</div>
+
+
+
+  <div class="container padded">
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1">
+
+        <%= simple_form_for [@star,@booking] do |f| %>
+          <%= f.error_notification %>
+          <%= f.input :from %>
+          <%= f.input :to %>
+          <%= f.button :submit, class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
