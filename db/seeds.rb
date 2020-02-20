@@ -17,7 +17,7 @@ edouard = User.create!(email: "edouard@pareasy.com", password: "password", first
 benjamin = User.create!(email: "benjamin@pareasy.com", password: "password", first_name: "benjamin", last_name: "C")
 xavier = User.create!(email: "xavier@pareasy.com", password: "password", first_name: "xavier", last_name: "B")
 
-puts 'Creating friends...'
+puts 'Creating stars...'
 
 catherine = Star.new(user: edouard, name: "Catherine Zeta Jones", gender: "female", city: "Los Angeles", price: 63000, category: "actress", size: 167)
 penelope = Star.new(user: xavier, name: "Penelope Cruz", gender: "female", city: "Barcelone", price: 210000, category: "actress", size: 169)
