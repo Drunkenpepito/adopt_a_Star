@@ -3,7 +3,7 @@
     <%= @star.name %>
     <div class="edit-star">
       <%= link_to "", star_path, method: :delete, data: {:confirm => 'Are you sure?'}, :class => "far fa-trash-alt" %>
-      <%= link_to "Edit", edit_star_path %>
+      <%= link_to "Edit", edit_star_path () %>
     </div>
   </div>
 
