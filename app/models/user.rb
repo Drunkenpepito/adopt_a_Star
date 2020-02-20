@@ -6,6 +6,7 @@
 
   has_many :bookings
   has_many :stars
+  has_many :reviews
 
   has_one_attached :photo
 
