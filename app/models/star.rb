@@ -4,6 +4,7 @@ class Star < ApplicationRecord
   has_many :bookings
   validate :attached_file?
   after_validation :geocode,  if: :will_save_change_to_city?
+  belongs_to :user
 
 private
 

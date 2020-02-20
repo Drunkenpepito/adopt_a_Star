@@ -2,6 +2,13 @@ class ReviewsController < ApplicationController
 
   before_action :set_review , only: [:show]
 
+
+  # renvoie toutes les revues sur une même star
+  def index
+  end
+
+
+
   def new
     @booking = Booking.find(params[:booking_id])
     @star = @booking.star
