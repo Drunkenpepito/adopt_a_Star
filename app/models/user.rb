@@ -5,6 +5,7 @@
          :recoverable, :rememberable, :validatable
 
   has_many :bookings
+  has_many :stars
 
   has_one_attached :photo
 

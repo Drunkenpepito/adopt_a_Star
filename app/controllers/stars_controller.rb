@@ -2,8 +2,11 @@ class StarsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show, :index]
 
   def index
-    @stars = Star.geocoded
+    @stars = policy_scope(Star).geocoded
 
+    if params[:query].present?
+      @stars = Star.search_by_name_and_more(params[:query])
+    end
 
     @markers = @stars.map do |star|
       {
@@ -11,12 +14,10 @@ class StarsController < ApplicationController
         lng: star.longitude
       }
     end
-    # @stars = Star.all
-    @stars = policy_scope(Star)
 
-    if params[:search] && params[:search][:name] && !params[:search][:name].empty?
-      @stars = @stars.where(name: params[:search][:name])
-    end
+    # if params[:search] && params[:search][:name] && !params[:search][:name].empty?
+    #   @stars = @stars.where(name: params[:search][:name])
+    # end
 
     # if params[:search] && params[:search][:city]  && !params[:search][:city].empty?
     #   @stars = @stars.where(city: params[:search][:city])
@@ -37,9 +38,9 @@ class StarsController < ApplicationController
     # if params[:search] && params[:search][:size] && !params[:search][:size].empty?
     #   @stars = @stars.where(size: params[:search][:size])
     # end
-    if params[:search] && params[:search][:size] && !params[:search][:size].empty?
-      @stars = @stars.where(size: params[:search][:size])
-    end
+    # if params[:search] && params[:search][:size] && !params[:search][:size].empty?
+    #   @stars = @stars.where(size: params[:search][:size])
+    # end
     authorize @stars
   end
 
@@ -57,6 +58,7 @@ class StarsController < ApplicationController
 
   def create
     @star = Star.new(star_params)
+    @star.user = current_user
      authorize @star
     if @star.save
       redirect_to star_path(@star)
