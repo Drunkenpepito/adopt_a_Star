@@ -3,16 +3,9 @@
   <div id = 'flex-index'>
     <% @bookings.each do |booking| %>
         <div class="card-product">
-<<<<<<< HEAD
-<<<<<<< HEAD
+
           <img src="<%= cl_image_path booking.star.photos.first.key, height: 300, width: 400, crop: :fill  %>" />
 
-=======
-          <img src="<%= cl_image_path booking.star.photos.first.key, height: 300, width: 400 %>" />
->>>>>>> master
-=======
-          <img src="<%= cl_image_path booking.star.photos.first.key, height: 300, width: 400 %>" />
->>>>>>> master
           <div class="card-product-infos">
             <h2><%= link_to booking.star.name, star_path(booking.star)%></h2>
             <p><%= booking.star.category %></p>
