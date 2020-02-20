@@ -1,22 +1,16 @@
  <h1>Reviews of <%= @star.name %>  </h1>
 
-<div class="notification">
-
-  <div class="notification-content">
-    <% @reviews.each do |review| %>
-      <img src="<%= cl_image_path review.user.photo.key%>" class="avatar-large" />
+<% @reviews.each do |review| %>
+  <div class="notification">
+    <img src="<%= cl_image_path review.user.photo.key%>" class="avatar-large" />
+    <div class="notification-content">
       <p><strong><%= review.note %> </strong> </p>
       <p><small><%= review.description %> </small></p>
-    <% end %>
+    </div>
+    <div class="notification-actions">
+      <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
+      <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+    </div>
   </div>
-
-
-  <div class="notification-actions">
-    <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
-    <a href="#">Delete <i class="far fa-trash-alt"></i></a>
-  </div>
-
-
-</div>
-
+<% end %>
 
