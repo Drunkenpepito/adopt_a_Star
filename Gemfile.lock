@@ -193,6 +193,9 @@ GEM
     simple_form (5.0.2)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
+    simple_form_autocomplete (1.1.0)
+      activesupport
+      simple_form
     spring (2.1.0)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -253,6 +256,7 @@ DEPENDENCIES
   redis
   sassc-rails
   simple_form
+  simple_form_autocomplete
   spring
   spring-watcher-listen (~> 2.0.0)
   uglifier

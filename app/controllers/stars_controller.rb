@@ -94,6 +94,6 @@ class StarsController < ApplicationController
   end
 
   def star_params
-    params.require(:star).permit(:name, :city, :category, :price, :sex, :size, photos: [])
+    params.require(:star).permit(:name, :city, :category, :price, :gender, :size, photos: [])
   end
 end
