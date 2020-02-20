@@ -26,7 +26,7 @@ class StarPolicy < ApplicationPolicy
   end
 #tout le monde peut update
   def update?
-    true
+    record.user == user
   end
 # tout le monde peut edit
   def edit?

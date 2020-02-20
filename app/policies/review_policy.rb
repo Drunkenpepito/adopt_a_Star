@@ -10,11 +10,11 @@ class ReviewPolicy < ApplicationPolicy
   end
 
   def create?
-   true
+   record.booking.user == user
   end
 
   def new?
-    create?
+    true
   end
 
   def show?
@@ -22,7 +22,7 @@ class ReviewPolicy < ApplicationPolicy
   end
 
   def update?
-    true
+    record.booking.user == user
   end
 
   def edit?
@@ -30,7 +30,7 @@ class ReviewPolicy < ApplicationPolicy
   end
 
   def destroy?
-    true
+    record.booking.user == user
   end
 
 end
