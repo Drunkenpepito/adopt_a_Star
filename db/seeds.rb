@@ -37,62 +37,59 @@ alain = Star.new(user: xavier, name: "Alain Delon", gender: "male", city: "Paris
 
 puts 'Linking with photos...'
 
-catherine_pic = URI.open("https://i.skyrock.net/4783/27084783/pics/814762761_small.jpg")
+catherine_pic = URI.open("https://res.cloudinary.com/dowapfod4/image/upload/v1582277009/u1g1t033ay8feqoaq8ih089oro56.jpg")
 catherine.photos.attach(io: catherine_pic, filename: 'some-image.jpg', content_type: 'image/jpg')
 catherine.save!
 
-jean_pic = URI.open("https://www.sudinfo.be/sites/default/files/dpistyles_v2/ena_sp_16_9_illustration_principale/2019/11/07/node_150584/41326666/public/2019/11/07/B9721519870Z.1_20191107201109_000+G88ES2UBG.1-0.jpg?itok=8Y2_Mdql1573211640")
+jean_pic = URI.open("https://res.cloudinary.com/dowapfod4/image/upload/v1582277077/kgtei7pydqu3w4t5n5gsdh9y75pk.jpg")
 jean.photos.attach(io: jean_pic, filename: 'some-image.jpg', content_type: 'image/jpg')
 jean.save!
 
-penelope_pic = URI.open("https://www.myagecalculator.com/images/pen-lope-cruz.jpg")
+penelope_pic = URI.open("https://res.cloudinary.com/dowapfod4/image/upload/v1582277079/s9wwdott389fyq10eeqso6k9odz4.jpg")
 penelope.photos.attach(io: penelope_pic, filename: 'some-image.jpg', content_type: 'image/jpg')
 penelope.save!
 
-brad_pic = URI.open("https://i.pinimg.com/originals/ca/3e/76/ca3e7657b24bfba217c3afa7d85802df.jpg")
+brad_pic = URI.open("https://res.cloudinary.com/dowapfod4/image/upload/v1582277081/377ew5mvia7ew6ijd35e4rhi65zt.jpg")
 brad.photos.attach(io: brad_pic, filename: 'some-image.jpg', content_type: 'image/jpg')
 brad.save!
 
-emily_pic = URI.open("https://img5.goodfon.com/wallpaper/nbig/b/1d/emily-ratajkowski-devushka-vzgliad-litso-makiiazh-model.jpg")
+emily_pic = URI.open("https://res.cloudinary.com/dowapfod4/image/upload/v1582277083/uoy6qqwhtcoxv8jqql4mvvbylfk2.jpg")
 emily.photos.attach(io: emily_pic, filename: 'some-image.jpg', content_type: 'image/jpg')
 emily.save!
 
-tom_pic = URI.open("https://lh3.googleusercontent.com/proxy/eh68aepZ_ux0fv3Rvtr1Q6zAI_TL_hos8G5B4AXemVmYi3aOipwMjnO2Ras1HWneibqNiml-DWRxgW0BCXxvtlXcO7HuceG3T_fg0HKBCnhToRRYOP4ENArgJNjERKHcqoiKwpIvred8j86IijyGPI0eMQwROhQJgYoV")
+tom_pic = URI.open("https://res.cloudinary.com/dowapfod4/image/upload/v1582277019/y6syc77jxb32f9ejb0tsamxxzz3r.jpg")
 tom.photos.attach(io: tom_pic, filename: 'some-image.jpg', content_type: 'image/jpg')
 tom.save!
 
-halle_pic = URI.open("https://www.cine-feuilles.ch/storage/app/uploads/public/5a3/cd7/167/5a3cd716737d6375340804.jpg")
+halle_pic = URI.open("https://res.cloudinary.com/dowapfod4/image/upload/v1582217663/0a249xg9ce3qva4nwvicevljveqs.jpg")
 halle.photos.attach(io: halle_pic, filename: 'some-image.jpg', content_type: 'image/jpg')
 halle.save!
 
-kylian_pic = URI.open("https://resize-elle.ladmedia.fr/r/300,,forcex/crop/300,386,center-middle,forcex,ffffff/img/var/plain_site/storage/images/personnalites/kylian-mbappe/87919214-1-fre-FR/Kylian-Mbappe.jpg")
+kylian_pic = URI.open("https://res.cloudinary.com/dowapfod4/image/upload/v1582217665/glp84bzc95h6548kq551zwk1t2sq.jpg")
 kylian.photos.attach(io: kylian_pic, filename: 'some-image.jpg', content_type: 'image/jpg')
 kylian.save!
 
-jackie_pic = URI.open("https://img-3.journaldesfemmes.fr/YAyCEIeh8VzUTd-Eft0FRT39LXI=/311x/smart/90211973f4794eaba9d4fa9495ae2a4d/ccmcms-jdf/13719693.jpg")
+jackie_pic = URI.open("https://res.cloudinary.com/dowapfod4/image/upload/v1582217667/l0ovvzf57rx7d0dzr5s7thnjy2ez.jpg")
 jackie.photos.attach(io: jackie_pic, filename: 'some-image.jpg', content_type: 'image/jpg')
 jackie.save!
 
-marion_pic = URI.open("https://hairstyles.thehairstyler.com/hairstyle_views/front_view_images/1942/original/Marion-Cotillard.jpg")
+marion_pic = URI.open("https://res.cloudinary.com/dowapfod4/image/upload/v1582217670/lsps9sjay7h60784i19lpra1ecoq.jpg")
 marion.photos.attach(io: marion_pic, filename: 'some-image.jpg', content_type: 'image/jpg')
 marion.save!
 
-alain_pic = URI.open("https://www.modaoperandi.com/assets/images/products/797440/415545/z/large_sonic-editions-black-alain-delon-1965.jpg?_v=1576619240")
+alain_pic = URI.open("https://res.cloudinary.com/dowapfod4/image/upload/v1582217673/nhh9xc7grxkuiatmfoo5pfdednlv.jpg")
 alain.photos.attach(io: alain_pic, filename: 'some-image.jpg', content_type: 'image/jpg')
 alain.save!
 
-
-
-
 puts 'Creating bookings...'
-Booking.create!(star: catherine, user: edouard, from: "26/12/2020", to: "28/12/2020")
-Booking.create!(star: penelope, user: xavier, from: "26/12/2020", to: "28/12/2020")
-Booking.create!(star: brad, user: benjamin, from: "16/11/2020", to: "19/11/2020")
-Booking.create!(star: emily, user: xavier, from: "12/01/2021", to: "19/02/2021")
-Booking.create!(star: halle, user: pierre, from: "23/02/2021", to: "28/02/2021")
-Booking.create!(star: tom, user: pierre, from: "25/02/2021", to: "29/02/2021")
-Booking.create!(star: kylian, user: pierre, from: "27/02/2021", to: "29/03/2021")
-Booking.create!(star: jackie, user: benjamin, from: "27/04/2020", to: "29/05/2020")
-Booking.create!(star: jean, user: benjamin, from: "27/05/2020", to: "29/05/2020")
-Booking.create!(star: marion, user: edouard, from: "26/08/2020", to: "29/09/2020")
-Booking.create!(star: alain, user: edouard, from: "26/06/2020", to: "29/07/2020")
+Booking.create!(star_id: catherine.id, user_id: edouard.id, from: "26/12/2020", to: "28/12/2020")
+Booking.create!(star_id: penelope.id, user_id: xavier.id, from: "26/12/2020", to: "28/12/2020")
+Booking.create!(star_id: brad.id, user_id: benjamin.id, from: "16/11/2020", to: "19/11/2020")
+Booking.create!(star_id: emily.id, user_id: xavier.id, from: "12/01/2021", to: "19/02/2021")
+Booking.create!(star_id: halle.id, user_id: pierre.id, from: "23/02/2021", to: "28/02/2021")
+Booking.create!(star_id: tom.id, user_id: pierre.id, from: "25/02/2021", to: "29/02/2021")
+Booking.create!(star_id: kylian.id, user_id: pierre.id, from: "27/02/2021", to: "29/03/2021")
+Booking.create!(star_id: jackie.id, user_id: benjamin.id, from: "27/04/2020", to: "29/05/2020")
+Booking.create!(star_id: jean.id, user_id: benjamin.id, from: "27/05/2020", to: "29/05/2020")
+Booking.create!(star_id: marion.id, user_id: edouard.id, from: "26/08/2020", to: "29/09/2020")
+Booking.create!(star_id: alain.id, user_id: edouard.id, from: "26/06/2020", to: "29/07/2020")
