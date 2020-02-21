@@ -14,7 +14,7 @@ class StarsController < ApplicationController
         lat: star.latitude,
         lng: star.longitude
       }
-      @st
+
     end
 
     # if params[:search] && params[:search][:name] && !params[:search][:name].empty?
