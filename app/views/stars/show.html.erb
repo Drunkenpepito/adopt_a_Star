@@ -45,10 +45,16 @@
             <% count = 0 %>
             <% sum = 0 %>
             <% @reviews.each do |review| %>
-              <% sum += review.note %>
-              <% count += 1 %>
+              <% if review.booking.star == @star %>
+                <% sum += review.note %>
+                <% count += 1 %>
+              <% end %>
             <% end %>
-            <% result = sum.fdiv(count).round.to_i %>
+            <% if count == 0 %>
+              <% result = 0 %>
+            <% else %>
+              <% result = sum.fdiv(count).round.to_i %>
+            <% end %>
             <div class="stars d-flex justify-content-right">
               <% result.times do  %>
                 <div><i class="fas fa-star" style="color: #FFEB3B"></i></div>
@@ -59,6 +65,10 @@
               <p>(<%= count %> votes)</p>
             </div>
           </div>
+
+
+
+
 
         <ul id="star-description">
           <li>Category : <%= @star.category %></li>
