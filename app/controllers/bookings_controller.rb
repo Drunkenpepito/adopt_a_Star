@@ -5,6 +5,7 @@ class BookingsController < ApplicationController
   def index
     @bookings = policy_scope(Booking)
     authorize @bookings
+    @review = Review.new
     # authorize @bookings
   end
 
