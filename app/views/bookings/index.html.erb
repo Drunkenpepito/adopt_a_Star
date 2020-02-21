@@ -1,21 +1,49 @@
 <div id ='container-index'>
 
-  <div id = 'flex-index'>
-    <% @bookings.each do |booking| %>
-        <div class="card-product">
 
-          <img src="<%= cl_image_path booking.star.photos.first.key, height: 300, width: 400, crop: :fill  %>" />
 
-          <div class="card-product-infos">
-            <h2><%= link_to booking.star.name, star_path(booking.star)%></h2>
-            <p><%= booking.star.category %></p>
-          <div>
-            <%= link_to "Add a review", new_booking_review_path(booking) %>
-          </div>
-          </div>
-        </div>
-    <% end %>
+
+                <div class="card" id="flex-index">
+                  <% @bookings.each_with_index do |booking, i| %>
+                    <div class="accordion" id="accordionExample">
+                      <div class="card-product-index">
+
+                        <img src="<%= cl_image_path booking.star.photos.first.key, height: 300, width: 400, crop: :fill  %>" />
+
+                        <div class="card-product-infos">
+                            <h2><%= link_to booking.star.name, star_path(booking.star)%></h2>
+                            <p><%= booking.star.category %></p>
+
+    <!--                             <div class="card-header" id="headingOne"> -->
+                                  <h2 class="mb-0">
+
+                                    <%= link_to "#", class: "btn btn-flat", data: {toggle: 'collapse', target: "#collapse#{i}"}, aria: {expanded: "true", controls: "collapse#{i}"} do %>
+                                        your Feedack
+                                    <% end %>
+                                  </h2>
+                              <!--   </div> -->
+
+                              <div id="collapse<%= i %>" class="collapse " aria-labelledby="headingOne" data-parent="#accordionExample">
+                               <div style="color:white;" class="container padded">
+                                     <%= simple_form_for([booking, @review]) do |f| %>
+                                       <%= f.error_notification %>
+                                       <%= f.input :note , placeholder: "Note"%>
+                                       <%= f.hidden_field :star, value: @star %>
+                                       <%= f.input :description, :input_html => {:rows => 4} , placeholder: "Description" %>
+                                       <%= f.button :submit, class: "btn btn-primary" %>
+                                     <% end %>
+                               </div>
+                              </div>
+
+                           </div>
+
+
+                         </div>
+
+                      </div>
+                   <% end %>
+               </div>
   </div>
-</div>
+
 
 

@@ -1,9 +1,6 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @star.photos.first.key %>');">
   <h1> How was it with <%= @star.name %> ?</h1>
   <div style="color:white;" class="container padded">
-
-
-
         <%= simple_form_for([@booking, @review]) do |f| %>
           <%= f.error_notification %>
           <%= f.input :note %>
@@ -11,10 +8,5 @@
           <%= f.input :description, :input_html => {:rows => 4}  %>
           <%= f.button :submit, class: "btn btn-primary" %>
         <% end %>
-
-
-
-
-
   </div>
 </div>
