@@ -170,6 +170,7 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.20.3, < 2.0)
     rake (13.0.1)
+    ratyrate (1.2.2.alpha)
     rb-fsevent (0.10.3)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
@@ -193,9 +194,6 @@ GEM
     simple_form (5.0.2)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
-    simple_form_autocomplete (1.1.0)
-      activesupport
-      simple_form
     spring (2.1.0)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -253,10 +251,10 @@ DEPENDENCIES
   puma
   pundit
   rails (= 6.0.2.1)
+  ratyrate
   redis
   sassc-rails
   simple_form
-  simple_form_autocomplete
   spring
   spring-watcher-listen (~> 2.0.0)
   uglifier

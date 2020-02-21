@@ -1,7 +1,7 @@
 class Star < ApplicationRecord
   geocoded_by :city
   has_many_attached :photos
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
   validate :attached_file?
   after_validation :geocode,  if: :will_save_change_to_city?
   belongs_to :user
