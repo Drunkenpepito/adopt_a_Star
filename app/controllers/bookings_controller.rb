@@ -25,7 +25,6 @@ class BookingsController < ApplicationController
     authorize @booking
     @booking.star = Star.find(params[:star_id])
     @booking.user = current_user
-    @booking.time =  (@booking.to - @booking.from).to_i
     if @booking.save
       redirect_to stars_path
     else
