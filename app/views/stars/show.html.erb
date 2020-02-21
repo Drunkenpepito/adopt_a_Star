@@ -1,7 +1,7 @@
 <div id="banner-edit-or-delete">
-    <div>
-      <%= link_to "Edit", edit_star_path %>
-      <%= link_to "", star_path, method: :delete, data: {:confirm => 'Are you sure?'}, :class => "far fa-trash-alt" %>
+    <div class="notification-actions">
+      <%= link_to " Edit", edit_star_path, :class => "fas fa-pencil-alt" %>
+      <%= link_to " Delete", star_path, method: :delete, data: {:confirm => 'Are you sure?'}, :class => "fas fa-trash-alt" %>
     </div>
 </div>
 
