@@ -3,7 +3,7 @@
   <div style="color:white;" class="container padded">
         <%= simple_form_for([@booking, @review]) do |f| %>
           <%= f.error_notification %>
-          <%= f.input :note %>
+          <%= f.input :note , collection: 0..5%>
           <%= f.hidden_field :star, value: @star %>
           <%= f.input :description, :input_html => {:rows => 4}  %>
           <%= f.button :submit, class: "btn btn-flat" %>
