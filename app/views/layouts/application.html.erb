@@ -15,7 +15,7 @@
     <%= render "shared/navbar" %>
     <%= yield %>
     <%= render "shared/flashes" %>
-    <%= render "shared/footer", home: request.original_fullpath == "/", filter: request.original_fullpath == "/" %>
+    <%= render "shared/footer" %>
 
     <%#= javascript_pack_tag 'application' %>
   </body>

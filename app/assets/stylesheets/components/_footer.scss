@@ -6,14 +6,6 @@
   height: 100px;
   padding: 0px 50px;
   // color: rgba(0,0,0,0.3);
-  // margin-top: 25px;
-}
-
-.footer-margin-home {
-  margin-top: 0px;
-}
-
-.footer-margin {
   margin-top: 25px;
 }
 
@@ -27,11 +19,15 @@
     font-size: 24px;
     padding: 0px 10px;
   }
+
   a:hover {
     opacity: 1;
   }
-}
 // .footer .fa-heart {
 //   color: #D23333;
-// }
+}
 
+.min-height {
+  min-height: calc(100vh - 198px);
+  margin-top: 0px;
+}
