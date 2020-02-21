@@ -109,38 +109,41 @@
         </div>
       </div>
 
+
     </div>
 
 <!--   </div> -->
 
 
 
-  <h3 class ="mt-4">Reviews</h3>
-  <div class ="box-reviews">
-      <% @reviews.each do |review| %>
-        <div class="notification">
-          <img src="<%= cl_image_path review.user.photo.key%>" class="avatar-large" />
-          <div class="notification-content">
-            <p>
-              <div class="stars d-flex justify-content-right">
-                <% review.note.times do  %>
-                  <div><i class="fas fa-star" style="color: #FFEB3B"></i></div>
-                <% end %>
-                <% (5 - review.note).times do %>
-                  <div><i class="fas fa-star" style="color: #eaeaea"></i></div>
-                <% end %>
+    <h3 class ="mt-4">Reviews</h3>
+      <div class ="box-reviews">
+        <% @reviews.each do |review| %>
+          <% if review.booking.star == @star %>
+            <div class="notification">
+              <img src="<%= cl_image_path review.user.photo.key%>" class="avatar-large" />
+              <div class="notification-content">
+                <p>
+                  <div class="stars d-flex justify-content-right">
+                    <% review.note.times do  %>
+                      <div><i class="fas fa-star" style="color: #FFEB3B"></i></div>
+                    <% end %>
+                    <% (5 - review.note).times do %>
+                      <div><i class="fas fa-star" style="color: #eaeaea"></i></div>
+                    <% end %>
+                  </div>
+                </p>
+                <p><%= review.user.first_name %> <%= review.user.last_name %></p>
+                <p><small><%= review.description %> </small></p>
               </div>
-            </p>
-            <p><%= review.user.first_name %> <%= review.user.last_name %></p>
-            <p><small><%= review.description %> </small></p>
-          </div>
-          <div class="notification-actions">
-            <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
-            <a href="#">Delete <i class="far fa-trash-alt"></i></a>
-          </div>
-        </div>
-      <% end %>
-  </div>
+              <div class="notification-actions">
+               <h2><%= link_to "Edit", edit_review_path(review), data: { turbolinks: false } %></h2>
+               <h2><%= link_to "Delete", review_path(review), method: :delete, data: {:confirm => 'Are you sure?'}, :class => "far fa-trash-alt" %></h2>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
 
 </div>
 

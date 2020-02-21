@@ -1,6 +1,5 @@
 class ReviewsController < ApplicationController
-
-  before_action :set_review , only: [:show]
+  # before_action :set_review , only: [:show]
 
 
   # renvoie toutes les revues sur une même star
@@ -18,8 +17,20 @@ class ReviewsController < ApplicationController
     authorize @review
   end
 
-  def create
+  def edit
+     @review = Review.find(params[:id])
+     @star = @review.booking.star
+     authorize @review
+  end
 
+  def update
+     @review = Review.find(params[:id])
+     authorize @review
+     @review.update(review_params)
+     redirect_to star_path(@review.booking.star)
+  end
+
+  def create
     @review = Review.new(review_params)
     @review.user = current_user
     @booking = Booking.find(params[:booking_id])
@@ -33,10 +44,11 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
+    @review = Review.find(params[:id])
     @booking = @review.booking
-    @review.destroy
-    redirect_to booking_path(@booking)
     authorize @review
+    @review.destroy
+    redirect_to star_path(@booking.star)
   end
 
   def set_review
