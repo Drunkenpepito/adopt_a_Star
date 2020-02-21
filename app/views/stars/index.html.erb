@@ -8,27 +8,28 @@
 </div>
 
 <div id ='container-index'>
-
-  <div id = 'flex-index'>
+  <div class="cards">
     <% @stars.each do |star| %>
-        <div class="card-product">
-          <img src="<%= cl_image_path star.photos.first.key, height: 300, width: 400, :crop => :thumb, :gravity => :face %>" />
-          <div class="card-product-infos">
+      <div class="card-trip">
+        <img src="<%= cl_image_path star.photos.first.key, height: 300, width: 400, :crop => :thumb, :gravity => :face %>" />
+        <div class="card-trip-infos">
+          <div>
             <h2><%= link_to star.name, star_path(star), data: { turbolinks: false } %></h2>
             <p><%= star.category %></p>
           </div>
+          <h2 class="card-trip-pricing"><%= star.price %>€</h2>
         </div>
+      </div>
     <% end %>
   </div>
 
   <div id='map'
     style="width: 40%;
-    height: 100vh;"
+    height: 70vh;"
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
-
 
 
 
