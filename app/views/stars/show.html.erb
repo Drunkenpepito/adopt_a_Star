@@ -121,7 +121,11 @@
         <% @reviews.each do |review| %>
           <% if review.booking.star == @star %>
             <div class="notification">
-              <img src="<%= cl_image_path review.user.photo.key%>" class="avatar-large" />
+              <% if review.user.photo.attached? %>
+                <%= cl_image_tag review.user.photo.key, class: 'avatar-large' %>
+              <% else %>
+                <%= image_tag 'avatar_default.png', class: 'avatar-large' %>
+              <% end %>
               <div class="notification-content">
                 <p>
                   <div class="stars d-flex justify-content-right">
