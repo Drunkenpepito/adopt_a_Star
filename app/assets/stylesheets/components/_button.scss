@@ -93,3 +93,29 @@
   background: linear-gradient(#147EFF, #0F67DA);
   color: white;
 }
+
+
+.colors-button-update{
+    color: white;
+    padding: 8px 24px;
+    border-radius: 4px;
+    background: #ED4B5F;
+    margin-bottom: 20px;
+}
+
+.colors-button-back {
+       color: black;
+    padding: 8px 24px;
+    border-radius: 4px;
+    margin: 10px;
+    background: dimgrey;
+}
+
+
+.buttons-bottom {
+  display: flex;
+  flex-direction: column;
+  * {
+    width: fit-content;
+  }
+}
