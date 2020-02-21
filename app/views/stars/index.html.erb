@@ -1,5 +1,5 @@
 
-<div class="filter">
+<div class="filter footer footer-margin<%= "-filter" if local_assigns.fetch(:filter, false) %>">
     <%= link_to "City", "#", class: "btn btn-ghost" %>
     <%= link_to "Category", "#", class: "btn btn-ghost" %>
     <%= link_to "Price", "#", class: "btn btn-ghost" %>
