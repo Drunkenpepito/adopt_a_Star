@@ -82,14 +82,25 @@ alain.photos.attach(io: alain_pic, filename: 'some-image.jpg', content_type: 'im
 alain.save!
 
 puts 'Creating bookings...'
-Booking.create!(star_id: catherine.id, user_id: edouard.id, from: "26/12/2020", to: "28/12/2020")
-Booking.create!(star_id: penelope.id, user_id: xavier.id, from: "26/12/2020", to: "28/12/2020")
-Booking.create!(star_id: brad.id, user_id: benjamin.id, from: "16/11/2020", to: "19/11/2020")
-Booking.create!(star_id: emily.id, user_id: xavier.id, from: "12/01/2021", to: "19/02/2021")
-Booking.create!(star_id: halle.id, user_id: pierre.id, from: "23/02/2021", to: "28/02/2021")
-Booking.create!(star_id: tom.id, user_id: pierre.id, from: "25/02/2021", to: "29/02/2021")
-Booking.create!(star_id: kylian.id, user_id: pierre.id, from: "27/02/2021", to: "29/03/2021")
-Booking.create!(star_id: jackie.id, user_id: benjamin.id, from: "27/04/2020", to: "29/05/2020")
-Booking.create!(star_id: jean.id, user_id: benjamin.id, from: "27/05/2020", to: "29/05/2020")
-Booking.create!(star_id: marion.id, user_id: edouard.id, from: "26/08/2020", to: "29/09/2020")
-Booking.create!(star_id: alain.id, user_id: edouard.id, from: "26/06/2020", to: "29/07/2020")
+b_1 = Booking.new(star_id: catherine.id, user_id: edouard.id, from: "26/12/2020", to: "28/12/2020")
+b_1.save!
+b_2 = Booking.new(star_id: penelope.id, user_id: xavier.id, from: "26/12/2020", to: "28/12/2020")
+b_2.save!
+b_3 = Booking.new(star_id: brad.id, user_id: benjamin.id, from: "16/11/2020", to: "19/11/2020")
+b_3.save!
+b_4 = Booking.new(star_id: emily.id, user_id: xavier.id, from: "12/01/2021", to: "19/02/2021")
+b_4.save!
+b_5 = Booking.new(star_id: halle.id, user_id: pierre.id, from: "23/02/2021", to: "28/02/2021")
+b_5.save!
+b_6 = Booking.new(star_id: tom.id, user_id: pierre.id, from: "25/02/2021", to: "26/02/2021")
+b_6.save!
+b_7 = Booking.new(star_id: kylian.id, user_id: pierre.id, from: "27/02/2021", to: "29/03/2021")
+b_7.save!
+b_8 = Booking.new(star_id: jackie.id, user_id: benjamin.id, from: "27/04/2020", to: "29/05/2020")
+b_8.save!
+b_9 = Booking.new(star_id: jean.id, user_id: benjamin.id, from: "27/05/2020", to: "29/05/2020")
+b_9.save!
+b_10 = Booking.new(star_id: marion.id, user_id: edouard.id, from: "26/08/2020", to: "29/09/2020")
+b_10.save!
+b_11 = Booking.new(star_id: alain.id, user_id: edouard.id, from: "26/06/2020", to: "29/07/2020")
+b_11.save!

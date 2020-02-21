@@ -7,21 +7,23 @@
     <%= link_to "Size", "#", class: "btn btn-ghost" %>
   </div>
 
-  <div id ='container-index'>
-    <div class="cards">
-      <% @stars.each do |star| %>
+<div id ='container-index'>
+  <div class="cards">
+    <% @stars.each do |star| %>
         <div class="card-trip">
-          <img src="<%= cl_image_path star.photos.first.key, height: 300, width: 400, :crop => :thumb, :gravity => :face %>" />
-          <div class="card-trip-infos">
-            <div>
-              <h2><%= link_to star.name, star_path(star), data: { turbolinks: false } %></h2>
-              <p><%= star.category %></p>
+          <%= link_to star_path(star), data: { turbolinks: false } do%>
+            <img src="<%= cl_image_path star.photos.first.key, height: 300, width: 400, :crop => :thumb, :gravity => :face %>" />
+            <div class="card-trip-infos">
+              <div>
+                <h2 id="link"><%= star.name %></h2>
+                <p id="link"><%= star.category %></p>
+              </div>
+              <h2 class="card-trip-pricing" id="link-2"><%= star.price %>€</h2>
             </div>
-            <h2 class="card-trip-pricing"><%= star.price %>€</h2>
-          </div>
+          <% end %>
         </div>
-      <% end %>
-    </div>
+    <% end %>
+  </div>
 
     <div id='map'
       style="width: 40%;
