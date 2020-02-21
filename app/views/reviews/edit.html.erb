@@ -1,0 +1,10 @@
+<div class= "container col-5">
+  <h1>Edit your review</h1>
+  <div class="form">
+    <%= simple_form_for([@booking,@review]) do |f| %>
+      <%= f.input :note %>
+      <%= f.input :description %>
+      <%= f.button :submit, class: "btn btn-gradient"%>
+    <% end %>
+  </div>
+</div>
