@@ -1,19 +1,9 @@
-<!-- <div class = "form-container">
-  <h1>Welcome to Adopt a Star</h1>
-  <div class="form">
-    <%= simple_form_for :search, url: stars_path, method: :get do |f| %>
-      <%= f.input :city %>
-      <%= f.input :category %>
-      <%= f.button :submit, class: "btn btn-gradient"%>
-    <% end %>
-  </div>
-</div>
- -->
+
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://media.vanityfair.com/photos/5a67aa397cfa05029c4004ef/master/w_2560%2Cc_limit/HWD-cover-gate-no-coverlines-2018-13.jpg);">
-  <div class="container">
+  <div class="container text-center">
     <h1>Welcome to <strong>Adopt A Star!</strong></h1>
     <p>We give you the chance to spent time with your favourite celebrity</p>
-
+    <%= link_to "Go!", stars_path, class: "btn btn-flat col-3", data: { turbolinks: false }%>
   </div>
 </div>
 
