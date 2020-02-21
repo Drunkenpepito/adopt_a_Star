@@ -41,7 +41,24 @@
           </a>
         </div>
 
-
+          <div class="stars d-flex justify-content-center">
+            <% count = 0 %>
+            <% sum = 0 %>
+            <% @reviews.each do |review| %>
+              <% sum += review.note %>
+              <% count += 1 %>
+            <% end %>
+            <% result = sum.fdiv(count).round.to_i %>
+            <div class="stars d-flex justify-content-right">
+              <% result.times do  %>
+                <div><i class="fas fa-star" style="color: #FFEB3B"></i></div>
+              <% end %>
+              <% (5 - result).times do %>
+                <div><i class="fas fa-star" style="color: #eaeaea"></i></div>
+              <% end %>
+              <p>(<%= count %> votes)</p>
+            </div>
+          </div>
 
         <ul id="star-description">
           <li>Category : <%= @star.category %></li>
@@ -104,7 +121,17 @@
         <div class="notification">
           <img src="<%= cl_image_path review.user.photo.key%>" class="avatar-large" />
           <div class="notification-content">
-            <p><strong><%= review.note %> </strong> </p>
+            <p>
+              <div class="stars d-flex justify-content-right">
+                <% review.note.times do  %>
+                  <div><i class="fas fa-star" style="color: #FFEB3B"></i></div>
+                <% end %>
+                <% (5 - review.note).times do %>
+                  <div><i class="fas fa-star" style="color: #eaeaea"></i></div>
+                <% end %>
+              </div>
+            </p>
+            <p><%= review.user.first_name %> <%= review.user.last_name %></p>
             <p><small><%= review.description %> </small></p>
           </div>
           <div class="notification-actions">
@@ -116,3 +143,4 @@
   </div>
 
 </div>
+

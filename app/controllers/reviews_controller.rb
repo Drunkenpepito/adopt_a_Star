@@ -43,6 +43,20 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
   end
 
+  def rank (number)
+    if number == 1
+      return ⭐️
+    elsif number == 2
+      return ⭐️⭐️
+    elsif number == 3
+      return ⭐️⭐️⭐️
+    elsif number == 4
+      return ⭐️⭐️⭐️⭐️
+    elsif number >= 5
+      return ⭐️⭐️⭐️⭐️⭐️
+    end
+  end
+
   def review_params
     params.require(:review).permit(:description, :note, :reservation_id)
   end

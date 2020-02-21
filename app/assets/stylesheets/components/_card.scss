@@ -64,7 +64,6 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-bottom: 20px;
   margin-left: 20px;
-  // margin-right: 20px;
 }
 
 .card-trip > img {
@@ -90,7 +89,6 @@
   padding: 16px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
   position: relative;
   a {
   color: #ED4B5F;
@@ -98,6 +96,29 @@
   text-decoration: none;
   }
   a:hover{
+    opacity: 1;
+  }
+}
+
+#link{
+  color: black;
+  opacity: 0.45;
+  text-decoration: none;
+  opacity: 1;
+  :hover{
+    opacity: 1;
+  }
+  p{
+    color: black;
+  }
+}
+
+#link-2{
+  color: black;
+  opacity: 0.45;
+  text-decoration: none;
+  opacity: 1;
+  :hover{
     opacity: 1;
   }
 }
