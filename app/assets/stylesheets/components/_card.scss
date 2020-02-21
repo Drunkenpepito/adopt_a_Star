@@ -152,6 +152,14 @@
   grid-gap: 16px;
 }
 
+.new_review label {
+    display: none;
+}
+
+.review_note {
+    margin-bottom: 0;
+}
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {

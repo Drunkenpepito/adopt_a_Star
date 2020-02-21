@@ -4,6 +4,7 @@ class StarsController < ApplicationController
   def index
     @stars = policy_scope(Star).geocoded
 
+
     if params[:query].present?
       @stars = Star.search_by_name_and_more(params[:query])
     end
@@ -13,6 +14,7 @@ class StarsController < ApplicationController
         lat: star.latitude,
         lng: star.longitude
       }
+      @st
     end
 
     # if params[:search] && params[:search][:name] && !params[:search][:name].empty?
@@ -42,6 +44,7 @@ class StarsController < ApplicationController
     #   @stars = @stars.where(size: params[:search][:size])
     # end
     authorize @stars
+
   end
 
   def show

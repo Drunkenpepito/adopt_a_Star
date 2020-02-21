@@ -1,8 +1,13 @@
 <div id="banner-edit-or-delete">
+
+
+<%  if @star.user == current_user %>
     <div class="notification-actions">
       <%= link_to " Edit", edit_star_path, :class => "fas fa-pencil-alt" %>
       <%= link_to " Delete", star_path, method: :delete, data: {:confirm => 'Are you sure?'}, :class => "fas fa-trash-alt" %>
     </div>
+<% end %>
+
 </div>
 
 <div class = "container mt-4">
@@ -41,6 +46,7 @@
           </a>
         </div>
 
+
           <div class="stars d-flex justify-content-center">
             <% count = 0 %>
             <% sum = 0 %>
@@ -65,6 +71,7 @@
               <p>(<%= count %> votes)</p>
             </div>
           </div>
+
 
 
 
@@ -126,6 +133,7 @@
 
 
 
+
     <h3 class ="mt-4">Reviews</h3>
       <div class ="box-reviews">
         <% @reviews.each do |review| %>
@@ -154,10 +162,10 @@
                <h2><%= link_to "Edit", edit_review_path(review), data: { turbolinks: false } %></h2>
                <h2><%= link_to "Delete", review_path(review), method: :delete, data: {:confirm => 'Are you sure?'}, :class => "far fa-trash-alt" %></h2>
               </div>
-            </div>
+
+          </div>
           <% end %>
-        <% end %>
-      </div>
+      <% end %>
+  </div>
 
 </div>
-

@@ -8,7 +8,7 @@
       <%= f.input :category %>
       <%= f.input :price %>
       <%= f.input :gender, collection: ["Male", "Female", "Other"]%>
-      <%= f.input :size, collection: 120..220%>
+      <%= f.input :size, collection: 160..200%>
       <%= f.input :photos, as: :file, input_html: { multiple: true } %>
       <%= f.button :submit, class: "btn btn-gradient"%>
     <% end %>
